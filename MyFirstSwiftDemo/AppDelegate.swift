@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        let homeVC = MyHomeVC();
+        let messageVC = MessageVC();
+        
+        
+        let tab : UITabBarController  = UITabBarController.init();
+        tab.viewControllers = [messageVC,homeVC]
+        self.window?.rootViewController = UINavigationController.init(rootViewController: tab)
         return true
     }
 
